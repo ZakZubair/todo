@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addTodo, deleteTodo, toggleTodo } from './actions';
 import Input from './components/Form';
 import List from './components/List';
-
-// TODO: refactor the list ID
-// Initial Id set to 2
-let listId = 2;
 
 class App extends Component {
   constructor(props) {
@@ -12,89 +11,70 @@ class App extends Component {
     this.state = {
       name: '',
       description: '',
-      listItems: [
-        {
-          id: 1,
-          name: 'New todo',
-          description: 'Testing the todo list',
-          checked: false,
-          dateCreated: new Date(),
-        },
-        {
-          id: 2,
-          name: 'Test TODO',
-          description: 'Test the todo for much longer text for it\'s visibility on the screen',
-          checked: false,
-          dateCreated: new Date(),
-        },
-      ],
     };
   }
 
+  // Handle onChange event for name input
   handleNameChange = (e) => {
     this.setState({
       name: e.target.value,
     });
   }
 
+  // Handle onChange event for description input
   handleDescriptionChange = (e) => {
     this.setState({
       description: e.target.value,
     });
   }
 
+  // Handle the create function
   handleCreate = () => {
-    const { name, description, listItems } = this.state;
-    this.setState({
-      name: '',
-      description: '',
-      listItems: listItems.concat({
-        id: listId += 1,
+    const { name, description } = this.state;
+    const { dispatch } = this.props;
+    if (name !== '' && description !== '') {
+      dispatch(addTodo({
         name,
         description,
         checked: false,
         dateCreated: new Date(),
-      }),
-    });
+        dateUpdated: null,
+      }));
+      this.setState({
+        name: '',
+        description: '',
+      });
+    }
   }
 
+  // Handle key pressing on description
   handleKeyPress = (e) => {
     if (e.key === 'Enter' && e.target.value !== '') {
       this.handleCreate();
     }
   }
 
+  // Handle toggle selection
   handleToggle = (id) => {
-    const { listItems } = this.state;
-    const index = listItems.findIndex((todo) => todo.id === id);
-
-    const selected = listItems[index];
-
-    this.setState({
-      listItems: [
-        ...listItems.slice(0, index),
-        {
-          ...selected,
-          checked: !selected.checked,
-        },
-        ...listItems.slice(index + 1, listItems.length),
-      ],
-    });
+    const { dispatch } = this.props;
+    dispatch(toggleTodo(id));
   }
 
+  // Handle the delete function
   handleRemove = (id) => {
-    const { listItems } = this.state;
-    this.setState({
-      listItems: listItems.filter((todo) => todo.id !== id),
-    });
+    const { dispatch } = this.props;
+    dispatch(deleteTodo(id));
   }
 
+  // TODO: update the edit function
+  // Handle the edit function
   handleEdit = (id) => {
     console.log('test', id);
   }
 
   render() {
-    const { name, description, listItems } = this.state;
+    const { name, description } = this.state;
+    const { listItems } = this.props;
     const {
       handleNameChange,
       handleDescriptionChange,
@@ -127,4 +107,16 @@ class App extends Component {
   }
 }
 
-export default App;
+App.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  listItems: PropTypes.arrayOf(PropTypes.any).isRequired,
+};
+
+const mapStateToProps = (state) => {
+  const { todoList } = state;
+  return {
+    listItems: todoList,
+  };
+};
+
+export default connect(mapStateToProps)(App);
