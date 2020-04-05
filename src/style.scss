@@ -1,0 +1,24 @@
+// Variables
+@import './styles/variables';
+@import './styles/mixins';
+
+// Components styles
+@import './components/Form/form';
+@import './components/Item/item';
+@import './components/List/list';
+
+// Main
+body {
+  font-family: $base-font;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $carrara;
+
+  .todo {
+    &__container {
+      margin: rem(60) auto;
+      max-width: rem(600);
+    }
+  }
+}

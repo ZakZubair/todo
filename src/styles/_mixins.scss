@@ -1,0 +1,12 @@
+// Border radius
+@mixin border-radius($radius...) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// Rem Sizing
+@function rem($pixels, $context: $base-sizing) {
+  @return #{$pixels/$context}rem;
+}
