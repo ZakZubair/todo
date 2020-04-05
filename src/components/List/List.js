@@ -19,12 +19,14 @@ class List extends PureComponent {
         description,
         checked,
         dateCreated,
+        dateUpdated,
       }) => (
         <Item
           id={id}
           name={name}
           description={description}
           date={dayjs(dateCreated).format('DD/MM/YY  h:mm a')}
+          dateUpdated={dateUpdated ? dayjs(dateUpdated).format('DD/MM/YY  h:mm a') : ''}
           checked={checked}
           onToggle={onToggle}
           onRemove={onRemove}

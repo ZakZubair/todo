@@ -48,6 +48,23 @@
       color: $bright-gray;
       margin: 0;
     }
+
+    input {
+      width: 100%;
+      color: $bright-gray;
+      outline: none;
+      border: none;
+      border-bottom: rem(1) solid $french-gray;
+      background-color: transparent;
+      &.name {
+        font-size: rem(18);
+        font-weight: 700;
+      }
+      &.description {
+        font-size: rem(16);
+        padding: rem(8) 0 0;
+      }
+    }
   }
 
   @keyframes strike{

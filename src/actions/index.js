@@ -10,6 +10,14 @@ export const addTodo = (todoItem) => ({
   dateUpdated: todoItem.dateUpdated,
 });
 
+export const editTodo = (todoItem) => ({
+  type: 'EDIT_TODO',
+  id: todoItem.id,
+  name: todoItem.name,
+  description: todoItem.description,
+  dateUpdated: todoItem.dateUpdated,
+});
+
 export const deleteTodo = (id) => ({
   type: 'DELETE_TODO',
   id,

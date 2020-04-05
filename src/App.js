@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addTodo, deleteTodo, toggleTodo } from './actions';
+import {
+  addTodo,
+  editTodo,
+  deleteTodo,
+  toggleTodo,
+} from './actions';
 import Input from './components/Form';
 import List from './components/List';
 
@@ -66,10 +71,16 @@ class App extends Component {
     dispatch(deleteTodo(id));
   }
 
-  // TODO: update the edit function
   // Handle the edit function
-  handleEdit = (id) => {
-    console.log('test', id);
+  handleEdit = (id, updatedName, updatedDescription) => {
+    const { dispatch } = this.props;
+    const currentTime = new Date();
+    dispatch(editTodo({
+      id,
+      name: updatedName,
+      description: updatedDescription,
+      dateUpdated: currentTime,
+    }));
   }
 
   render() {
