@@ -1,5 +1,17 @@
-const todoList = (state = [], action) => {
+import { REHYDRATE } from 'redux-persist/lib/constants';
+
+const initialState = [];
+
+const todoList = (state = initialState, action) => {
   switch (action.type) {
+    case REHYDRATE:
+      if (action.payload && action.payload.todoList) {
+        return [
+          ...state,
+          ...action.payload.todoList,
+        ];
+      }
+      return state;
     case 'ADD_TODO':
       return [
         ...state,
