@@ -9,6 +9,7 @@ import {
 } from './actions';
 import Input from './components/Form';
 import List from './components/List';
+import Logo from './assets/img/logo.png';
 
 class App extends Component {
   constructor(props) {
@@ -98,6 +99,9 @@ class App extends Component {
 
     return (
       <div className="todo__container">
+        <div className="todo__header">
+          <img src={Logo} className="todo__logo" alt="ToDo. Logo" />
+        </div>
         <Input
           name={name}
           description={description}
@@ -113,6 +117,22 @@ class App extends Component {
           onRemove={handleRemove}
           onEdit={handleEdit}
         />
+
+        <div className="todo__footer">
+          {/* TODO: action buttons goes here */}
+          <button className="todo__button" type="button">
+            Record
+          </button>
+          <button className="todo__button" type="button">
+            Stop Recording
+          </button>
+          <button className="todo__button" type="button">
+            Clear Recording
+          </button>
+          <button className="todo__button" type="button">
+            Play Recording
+          </button>
+        </div>
       </div>
     );
   }

@@ -43,6 +43,7 @@ class List extends PureComponent {
     );
   }
 }
+
 List.defaultProps = {
   listItems: [],
 };

@@ -13,7 +13,7 @@ class Item extends Component {
     };
   }
 
-  // Handle onChange event for name input\
+  // Handle onChange event for name input
   handleEditNameChange = (e) => {
     e.stopPropagation();
     this.setState({

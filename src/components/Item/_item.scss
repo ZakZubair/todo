@@ -5,6 +5,7 @@
   transition: all 0.15s;
   user-select: none;
   outline: 0;
+  border-top: rem(2) solid $athens-gray;
   cursor: pointer;
 
   &:hover {
@@ -16,11 +17,7 @@
   }
 
   + .item {
-    border-top: rem(1) solid $athens-gray;
-
-    &:first-child {
-      border-top: 0;
-    }
+    border-top: rem(2) solid $athens-gray;
   }
 
   &__text {
@@ -54,6 +51,7 @@
       color: $bright-gray;
       outline: none;
       border: none;
+      padding-bottom: rem(4);
       border-bottom: rem(1) solid $french-gray;
       background-color: transparent;
       &.name {
@@ -62,7 +60,7 @@
       }
       &.description {
         font-size: rem(16);
-        padding: rem(8) 0 0;
+        padding: rem(8) 0 rem(4);
       }
     }
   }

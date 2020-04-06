@@ -1,16 +1,18 @@
 .input {
   display: flex;
-  background-color: transparent;
-  margin-bottom: rem(32);
+  flex-direction: column;
+  background-color: $white;
+  padding: rem(16) rem(16) rem(24);
 
   input {
     flex: 1;
-    font-size: rem(20);
+    font-size: rem(18);
     color: $bright-gray;
     outline: none;
     border: none;
-    margin-right: rem(16);
-    border-bottom: rem(2) solid $turquoise;
+    padding-bottom: rem(16);
+    margin: rem(24) 0 0;
+    border-bottom: rem(2) solid $emerald-20;
     background-color: transparent;
   }
 
@@ -27,6 +29,9 @@
     height: rem(60);
     border: 2px solid $white;
     outline: 0;
+    position: absolute;
+    left: calc(50% - 30px);
+    margin-top: -48px;
     transition: all 0.15s;
 
     &:hover {
