@@ -1,4 +1,5 @@
 import { REHYDRATE } from 'redux-persist/lib/constants';
+import uuid from 'uuid/v4';
 
 const initialState = [];
 
@@ -16,7 +17,7 @@ const todoList = (state = initialState, action) => {
       return [
         ...state,
         {
-          id: action.id,
+          id: uuid(),
           name: action.name,
           description: action.description,
           checked: action.checked,

@@ -1,8 +1,5 @@
-// initial todo item id
-let listId = 0;
 export const addTodo = (todoItem) => ({
   type: 'ADD_TODO',
-  id: listId += 1,
   name: todoItem.name,
   description: todoItem.description,
   checked: todoItem.checked,
