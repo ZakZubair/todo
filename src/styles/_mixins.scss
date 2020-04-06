@@ -6,6 +6,19 @@
   border-radius: $radius;
 }
 
+// Breakpoints
+@mixin breakpoint-xs {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-sm {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
 // Rem Sizing
 @function rem($pixels, $context: $base-sizing) {
   @return #{$pixels/$context}rem;
