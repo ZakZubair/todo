@@ -14,12 +14,14 @@
     margin: rem(24) 0 0;
     border-bottom: rem(2) solid $emerald-20;
     background-color: transparent;
+    &::placeholder {
+      color: $french-gray;
+    }
   }
 
   &__create-button {
     font-family: $secondary-font;
     background: $turquoise;
-    border-radius: rem(3);
     color: $emerald;
     font-size: rem(32);
     font-weight: 700;

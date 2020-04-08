@@ -1,5 +1,6 @@
+// TODO Items
 export const addTodo = (todoItem) => ({
-  type: 'ADD_TODO',
+  type: 'todoList/ADD_TODO',
   name: todoItem.name,
   description: todoItem.description,
   checked: todoItem.checked,
@@ -8,7 +9,7 @@ export const addTodo = (todoItem) => ({
 });
 
 export const editTodo = (todoItem) => ({
-  type: 'EDIT_TODO',
+  type: 'todoList/EDIT_TODO',
   id: todoItem.id,
   name: todoItem.name,
   description: todoItem.description,
@@ -16,11 +17,28 @@ export const editTodo = (todoItem) => ({
 });
 
 export const deleteTodo = (id) => ({
-  type: 'DELETE_TODO',
+  type: 'todoList/DELETE_TODO',
   id,
 });
 
 export const toggleTodo = (id) => ({
-  type: 'TOGGLE_TODO',
+  type: 'todoList/TOGGLE_TODO',
   id,
+});
+
+// VCR Recordings
+export const captureRecording = () => ({
+  type: 'vcr/CAPTURE_RECORDING',
+});
+
+export const stopRecording = () => ({
+  type: 'vcr/STOP_RECORDING',
+});
+
+export const playRecording = () => ({
+  type: 'vcr/PLAY_RECORDING',
+});
+
+export const clearRecording = () => ({
+  type: 'vcr/CLEAR_RECORDING',
 });

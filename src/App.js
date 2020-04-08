@@ -6,9 +6,14 @@ import {
   editTodo,
   deleteTodo,
   toggleTodo,
+  captureRecording,
+  stopRecording,
+  clearRecording,
+  playRecording,
 } from './actions';
 import Input from './components/Form';
 import List from './components/List';
+import VCR from './components/VCR';
 import Logo from './assets/img/logo.png';
 
 class App extends Component {
@@ -84,9 +89,40 @@ class App extends Component {
     }));
   }
 
+  // Handle record
+  handleCaptureRecording = () => {
+    const { dispatch } = this.props;
+    dispatch(captureRecording());
+  }
+
+  // Handle stop record
+  handleStopRecording = () => {
+    const { dispatch } = this.props;
+    dispatch(stopRecording());
+  }
+
+  // Handle clear recording
+  handleClearRecording = () => {
+    const { dispatch } = this.props;
+    dispatch(clearRecording());
+  }
+
+  // Handle clear recording
+  handlePlayRecording = () => {
+    const { dispatch } = this.props;
+    dispatch(playRecording());
+  }
+
   render() {
     const { name, description } = this.state;
-    const { listItems } = this.props;
+    const {
+      listItems,
+      isRecording,
+      recordingAvailable,
+      playRecordingTimeElapsed,
+      isPlayingRecording,
+      recordedTime,
+    } = this.props;
     const {
       handleNameChange,
       handleDescriptionChange,
@@ -95,10 +131,14 @@ class App extends Component {
       handleKeyPress,
       handleRemove,
       handleEdit,
+      handleCaptureRecording,
+      handleStopRecording,
+      handleClearRecording,
+      handlePlayRecording,
     } = this;
 
     return (
-      <div className="todo__container">
+      <div className={`todo__container ${isRecording ? 'todo__container--recording' : ''} ${isPlayingRecording ? 'todo__container--playing' : ''}`}>
         <div className="todo__header">
           <img src={Logo} className="todo__logo" alt="ToDo. Logo" />
         </div>
@@ -118,21 +158,17 @@ class App extends Component {
           onEdit={handleEdit}
         />
 
-        <div className="todo__footer">
-          {/* TODO: action buttons goes here */}
-          <button className="todo__button" type="button">
-            Record
-          </button>
-          <button className="todo__button" type="button">
-            Stop Recording
-          </button>
-          <button className="todo__button" type="button">
-            Clear Recording
-          </button>
-          <button className="todo__button" type="button">
-            Play Recording
-          </button>
-        </div>
+        <VCR
+          recordingAvailable={recordingAvailable}
+          isPlayingRecording={isPlayingRecording}
+          recordedTime={recordedTime}
+          playRecordingTimeElapsed={playRecordingTimeElapsed}
+          isRecording={isRecording}
+          onClickCaptureRecording={handleCaptureRecording}
+          onClickStopRecording={handleStopRecording}
+          onClickPlayRecording={handleClearRecording}
+          onClickClearRecording={handlePlayRecording}
+        />
       </div>
     );
   }
@@ -141,12 +177,35 @@ class App extends Component {
 App.propTypes = {
   dispatch: PropTypes.func.isRequired,
   listItems: PropTypes.arrayOf(PropTypes.any).isRequired,
+  isRecording: PropTypes.bool.isRequired,
+  recordingAvailable: PropTypes.bool.isRequired,
+  recordedTime: PropTypes.string.isRequired,
+  isPlayingRecording: PropTypes.bool.isRequired,
+  playRecordingTimeElapsed: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
 };
 
 const mapStateToProps = (state) => {
-  const { todoList } = state;
+  const { todoList, vcr } = state;
+  const { todoItems } = todoList;
+
+  let recordedTodoItems;
+  if (vcr.isPlayingRecording) {
+    recordedTodoItems = [
+      ...vcr.recording[vcr.recordingStep].currentState,
+    ];
+  }
+
   return {
-    listItems: todoList,
+    listItems: recordedTodoItems || todoItems,
+    isRecording: vcr.isRecording,
+    recordingAvailable:
+      vcr.recording.length > 1 && !vcr.isRecording,
+    recordedTime: vcr.recordedTime,
+    isPlayingRecording: vcr.isPlayingRecording,
+    playRecordingTimeElapsed: vcr.playRecordingTimeElapsed,
   };
 };
 

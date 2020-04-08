@@ -127,7 +127,7 @@ Item.defaultProps = {
 };
 
 Item.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,

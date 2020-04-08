@@ -1,5 +1,21 @@
 .list-container {
+  position: relative;
   background-color: $white;
   box-shadow: 0 rem(8) rem(16) 0 $mischka-35;
   text-shadow: 0 rem(8) rem(16) $mischka-35;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-image: url('./assets/img/footer-bg.png');
+    height: rem(75);
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: rem(-75);
+    // Breakpoint for extra small screen
+    @include breakpoint-xs {
+      background-size: contain;
+    }
+  }
 }
