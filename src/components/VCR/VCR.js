@@ -20,7 +20,7 @@ class VCR extends PureComponent {
     let textAnimation = false;
 
     if (recordingAvailable && !isPlayingRecording) {
-      layout = `Created at ${recordedTime}`;
+      layout = `Captured at ${recordedTime}`;
       textAnimation = true;
     } else if (recordingAvailable && isPlayingRecording) {
       layout = playRecordingTimeElapsed;
@@ -28,7 +28,7 @@ class VCR extends PureComponent {
       layout = 'Recording...';
       textAnimation = false;
     } else {
-      layout = 'Not recording';
+      layout = 'Click to record';
     }
 
     return (

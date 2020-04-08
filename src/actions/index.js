@@ -1,6 +1,8 @@
+import * as types from '../constants/actionTypes';
+
 // TODO Items
 export const addTodo = (todoItem) => ({
-  type: 'todoList/ADD_TODO',
+  type: types.ADD_TODO,
   name: todoItem.name,
   description: todoItem.description,
   checked: todoItem.checked,
@@ -9,7 +11,7 @@ export const addTodo = (todoItem) => ({
 });
 
 export const editTodo = (todoItem) => ({
-  type: 'todoList/EDIT_TODO',
+  type: types.EDIT_TODO,
   id: todoItem.id,
   name: todoItem.name,
   description: todoItem.description,
@@ -17,28 +19,28 @@ export const editTodo = (todoItem) => ({
 });
 
 export const deleteTodo = (id) => ({
-  type: 'todoList/DELETE_TODO',
+  type: types.DELETE_TODO,
   id,
 });
 
 export const toggleTodo = (id) => ({
-  type: 'todoList/TOGGLE_TODO',
+  type: types.TOGGLE_TODO,
   id,
 });
 
 // VCR Recordings
 export const captureRecording = () => ({
-  type: 'vcr/CAPTURE_RECORDING',
+  type: types.CAPTURE_RECORDING,
 });
 
 export const stopRecording = () => ({
-  type: 'vcr/STOP_RECORDING',
+  type: types.STOP_RECORDING,
 });
 
 export const playRecording = () => ({
-  type: 'vcr/PLAY_RECORDING',
+  type: types.PLAY_RECORDING,
 });
 
 export const clearRecording = () => ({
-  type: 'vcr/CLEAR_RECORDING',
+  type: types.CLEAR_RECORDING,
 });

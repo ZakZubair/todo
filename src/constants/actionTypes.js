@@ -1,0 +1,10 @@
+export const ADD_TODO = 'todoList/ADD_TODO';
+export const EDIT_TODO = 'todoList/EDIT_TODO';
+export const DELETE_TODO = 'todoList/DELETE_TODO';
+export const TOGGLE_TODO = 'todoList/TOGGLE_TODO';
+export const CAPTURE_RECORDING = 'vcr/CAPTURE_RECORDING';
+export const STOP_RECORDING = 'vcr/STOP_RECORDING';
+export const PLAY_RECORDING = 'vcr/PLAY_RECORDING';
+export const CLEAR_RECORDING = 'vcr/CLEAR_RECORDING';
+export const PLAY_NEXT_RECORDING = 'PLAY_NEXT_RECORDING';
+export const VCR_ACTION = 'VCR_ACTION';

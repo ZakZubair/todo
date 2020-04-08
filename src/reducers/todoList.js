@@ -1,5 +1,6 @@
 import { REHYDRATE } from 'redux-persist/lib/constants';
 import { v4 as uuid } from 'uuid';
+import * as types from '../constants/actionTypes';
 
 const initialState = {
   todoItems: [],
@@ -15,7 +16,7 @@ const todoList = (state = initialState, action) => {
         };
       }
       return state;
-    case 'todoList/ADD_TODO': {
+    case types.ADD_TODO: {
       const newItem = {
         id: uuid(),
         name: action.name,
@@ -33,7 +34,7 @@ const todoList = (state = initialState, action) => {
         todoItems,
       };
     }
-    case 'todoList/EDIT_TODO': {
+    case types.EDIT_TODO: {
       const {
         id, name, description, dateUpdated,
       } = action;
@@ -51,7 +52,7 @@ const todoList = (state = initialState, action) => {
         todoItems,
       };
     }
-    case 'todoList/DELETE_TODO': {
+    case types.DELETE_TODO: {
       const { id } = action;
       const todoItems = state.todoItems.filter((todo) => todo.id !== id);
 
@@ -60,7 +61,7 @@ const todoList = (state = initialState, action) => {
         todoItems,
       };
     }
-    case 'todoList/TOGGLE_TODO': {
+    case types.TOGGLE_TODO: {
       const { id } = action;
       const todoItems = [...state.todoItems];
 

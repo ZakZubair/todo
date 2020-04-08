@@ -1,6 +1,7 @@
 import { REHYDRATE } from 'redux-persist/lib/constants';
 import dayjs from 'dayjs';
 import { getTimeElapsedInMinutes } from '../helpers';
+import * as types from '../constants/actionTypes';
 
 const initialState = {
   recording: [],
@@ -27,14 +28,14 @@ const vcr = (state = initialState, action) => {
       }
       return state;
     }
-    case 'vcr/CAPTURE_RECORDING': {
+    case types.CAPTURE_RECORDING: {
       return {
         ...state,
         recording: [],
         isRecording: true,
       };
     }
-    case 'vcr/STOP_RECORDING': {
+    case types.STOP_RECORDING: {
       if (
         state.recording.every((record) => record.action.includes('vcr/'))
       ) {
@@ -52,7 +53,7 @@ const vcr = (state = initialState, action) => {
         recordedTime: currentTime,
       };
     }
-    case 'vcr/PLAY_RECORDING': {
+    case types.PLAY_RECORDING: {
       const timeElapsed = getTimeElapsedInMinutes(state.recording.length - 1);
 
       return {
@@ -62,7 +63,7 @@ const vcr = (state = initialState, action) => {
         playRecordingTimeElapsed: timeElapsed,
       };
     }
-    case 'PLAY_NEXT_RECORDING': {
+    case types.PLAY_NEXT_RECORDING: {
       const { recordingStep, recording } = state;
       if (recordingStep < recording.length - 1) {
         const timeElapsed = getTimeElapsedInMinutes(
@@ -82,14 +83,14 @@ const vcr = (state = initialState, action) => {
         playRecordingTimeElapsed: 0,
       };
     }
-    case 'vcr/CLEAR_RECORDING': {
+    case types.CLEAR_RECORDING: {
       return {
         ...state,
         recording: [],
         recordedTime: '',
       };
     }
-    case 'VCR_ACTION': {
+    case types.VCR_ACTION: {
       const recording = [...state.recording];
 
       recording.push(action.payload.capturedAction);
