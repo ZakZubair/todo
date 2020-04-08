@@ -92,7 +92,7 @@ const vcr = (state = initialState, action) => {
     case 'VCR_ACTION': {
       const recording = [...state.recording];
 
-      recording.push(action.payload.recordedAction);
+      recording.push(action.payload.capturedAction);
 
       return {
         ...state,

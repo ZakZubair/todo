@@ -166,8 +166,8 @@ class App extends Component {
           isRecording={isRecording}
           onClickCaptureRecording={handleCaptureRecording}
           onClickStopRecording={handleStopRecording}
-          onClickPlayRecording={handleClearRecording}
-          onClickClearRecording={handlePlayRecording}
+          onClickPlayRecording={handlePlayRecording}
+          onClickClearRecording={handleClearRecording}
         />
       </div>
     );
