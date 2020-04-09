@@ -1,7 +1,11 @@
 {
   "name": "todo",
   "version": "0.0.1",
-  "private": true,
+  "author": "Zak Zubair <zakaaf@hotmail.co.uk>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZakZubair/todo.git"
+},
   "dependencies": {
     "dayjs": "^1.8.23",
     "prop-types": "^15.7.2",
