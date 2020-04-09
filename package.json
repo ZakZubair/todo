@@ -41,7 +41,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --env.development",
-    "test": "jest",
+    "test": "jest --verbose",
     "build": "webpack --env.production",
     "lint": "eslint src"
   }
