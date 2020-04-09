@@ -1,5 +1,6 @@
 ![picture](./src/assets/img/logo.png)
 
+[![Build Status](https://travis-ci.org/ZakZubair/todo.svg?branch=master)](https://travis-ci.org/ZakZubair/todo)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1a9ff739-8656-445b-99b6-66aa99564cb0/deploy-status)](https://app.netlify.com/sites/todo-list-by-zak/deploys)
 
 ## [Live Demo](https://todo-list-by-zak.netlify.com/)
