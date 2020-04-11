@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Input from '../Input';
+import Button from '../Button';
 import checkIn from '../../assets/img/check-in.svg';
 
 class Item extends Component {
@@ -49,7 +51,7 @@ class Item extends Component {
         </div>
         <div className={`item__text ${checked ? 'item__checked' : ''}`}>
           {!isEditing ? <p className="item__text__name"><span>{name}</span></p> : (
-            <input
+            <Input
               value={editingName}
               onChange={handleEditNameChange}
               placeholder="Name"
@@ -63,7 +65,7 @@ class Item extends Component {
             />
           )}
           {!isEditing ? <p className="item__text__description">{description}</p> : (
-            <input
+            <Input
               value={editingDescription}
               onChange={handleEditDescriptionChange}
               placeholder="Description"
@@ -79,22 +81,21 @@ class Item extends Component {
           <p className="item__text__date">{dateUpdated ? `Updated at ${dateUpdated}` : `Created at ${date}`}</p>
         </div>
         {!checked && !isEditing && (
-          <button
-            className="item__edit"
+          <Button
+            className="button__edit"
             onClick={(e) => {
               e.stopPropagation();
               this.setState({
                 isEditing: true,
               });
             }}
-            type="button"
           >
             Edit
-          </button>
+          </Button>
         )}
         {isEditing && (
-          <button
-            className="item__edit"
+          <Button
+            className="button__edit"
             onClick={(e) => {
               e.stopPropagation();
               onEdit(id, editingName, editingDescription);
@@ -102,21 +103,19 @@ class Item extends Component {
                 isEditing: false,
               });
             }}
-            type="button"
           >
             Done editing
-          </button>
+          </Button>
         )}
-        <button
-          className="item__remove"
+        <Button
+          className="button__remove"
           onClick={(e) => {
             e.stopPropagation();
             onRemove(id);
           }}
-          type="button"
         >
           &times;
-        </button>
+        </Button>
       </div>
     );
   }

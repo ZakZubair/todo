@@ -1,0 +1,104 @@
+.button {
+  &__add {
+    font-family: $secondary-font;
+    background: $turquoise;
+    color: $emerald;
+    font-size: rem(32);
+    font-weight: 700;
+    cursor: pointer;
+    @include border-radius(100%);
+    width: rem(60);
+    height: rem(60);
+    border: 2px solid $white;
+    outline: 0;
+    position: absolute;
+    left: calc(50% - 30px);
+    margin-top: -48px;
+    transition: all 0.15s;
+
+    &:hover {
+      background: $emerald;
+      color: $white;
+    }
+  }
+
+  &__edit {
+    color: $bright-gray;
+    opacity: 0;
+    background: transparent;
+    border: none;
+    padding: 0 rem(16);
+    outline: 0;
+    transition: all 0.15s;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__remove {
+    font-size: rem(16);
+    font-family: $secondary-font;
+    color: $emerald;
+    font-weight: 700;
+    opacity: 0;
+    width: rem(28);
+    height: rem(28);
+    border: rem(2) solid $athens-gray;
+    background-color: $white;
+    transition: all 0.15s;
+    outline: 0;
+    cursor: pointer;
+    @include border-radius(100%);
+
+    &:hover {
+      background-color: $emerald;
+      color: $white;
+    }
+  }
+  // VCR button common elements
+  &__vcr {
+    width: rem(40);
+    height: rem(40);
+    border: 2px solid $french-gray;
+    outline: 0;
+    transition: all 0.15s;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__record {
+    @extend .button__vcr; // Extend the common elements
+    background: $alizarin-crimson;
+    @include border-radius(100%);
+  }
+
+  &__stop {
+    @extend .button__vcr; // Extend the common elements
+    background-color: $bright-gray;
+    @include border-radius(8px);
+  }
+
+  &__clear {
+    @extend .button__vcr; // Extend the common elements
+    border: 0;
+    img {
+      width: rem(40);
+      height: 100%;
+    }
+  }
+
+  &__play {
+    @extend .button__vcr; // Extend the common elements
+    background: transparent;
+    box-sizing: border-box;
+    border-width: rem(20) 0 rem(20) rem(36);
+    border-color: transparent transparent transparent $japanese-laurel;
+    &__playing {
+      border-color: transparent transparent transparent $french-gray;
+      pointer-events: none;
+    }
+  }
+}

@@ -46,6 +46,7 @@
   "scripts": {
     "start": "webpack-dev-server --env.development",
     "test": "jest --verbose",
+    "build:dev": "webpack --env.development",
     "build": "webpack --env.production",
     "lint": "eslint src"
   }

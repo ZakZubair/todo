@@ -19,7 +19,48 @@
   }
 }
 
+// Keyframes
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
 // Rem Sizing
 @function rem($pixels, $context: $base-sizing) {
   @return #{$pixels/$context}rem;
+}
+
+// Keyframe includes
+@include keyframes(strike) {
+  0%   { width : 0; }
+  100% { width: 100%; }
+}
+
+@include keyframes(marquee) {
+  from { transform: translateX(300%); }
+  to { transform: translateX(-300%); }
+}
+
+@include keyframes(blink-recording) {
+  50% {
+    border-color: $alizarin-crimson;
+    box-shadow: 0 rem(30) rem(56) rem(6) $alizarin-crimson-35;
+  }
+}
+
+@include keyframes(blink-playing) {
+  50% {
+    border-color: $japanese-laurel;
+    box-shadow: 0 rem(30) rem(56) rem(6) $japanese-laurel-35;
+  }
 }

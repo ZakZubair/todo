@@ -3,29 +3,12 @@
 @import './styles/mixins';
 
 // Components styles
+@import './components/Input/input';
+@import './components/Button/button';
 @import './components/Form/form';
 @import './components/Item/item';
 @import './components/List/list';
 @import './components/VCR/vcr';
-
-@keyframes marquee {
-  from { transform: translateX(300%); }
-  to { transform: translateX(-300%); }
-}
-
-@keyframes blink-recording {
-  50% {
-    border-color: $alizarin-crimson;
-    box-shadow: 0 rem(30) rem(56) rem(6) $alizarin-crimson-35;
-  }
-}
-
-@keyframes blink-playing {
-  50% {
-    border-color: $japanese-laurel;
-    box-shadow: 0 rem(30) rem(56) rem(6) $japanese-laurel-35;
-  }
-}
 
 // Main
 body {

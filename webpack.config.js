@@ -3,9 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function (env) {
   return {
+    mode: env.development ? 'development' : 'production',
     entry: './src/index.js',
     output: {
-      path: path.resolve(__dirname, 'build'),
+      path: path.resolve(__dirname, env.development ? 'build/development' : 'build/production'),
       filename: 'bundle.js',
     },
     module: {
@@ -22,7 +23,7 @@ module.exports = function (env) {
           use: ['style-loader', 'css-loader', 'sass-loader'],
         },
         {
-          test: /\.(jpe?g|gif|png|svg)$/i,
+          test: /\.(jpe?g|gif|png|svg|ico)$/i,
           use: [
             {
               loader: 'url-loader',
@@ -37,13 +38,14 @@ module.exports = function (env) {
     plugins: [
       new HtmlWebpackPlugin({
         template: './public/index.html',
+        favicon: './public/favicon.ico',
         filename: 'index.html',
       }),
     ],
     devServer: {
-      contentBase: path.join(__dirname, 'build'),
+      contentBase: path.join(__dirname, 'build/development'),
       port: 8080,
-      open: 'Google Chrome', // For OSX
+      open: true,
     },
     devtool: env.development ? 'source-map' : '',
   };

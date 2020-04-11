@@ -48,47 +48,6 @@
       align-items: center;
       justify-content: center;
       padding-top: rem(4);
-      button {
-        font-size: 0;
-        width: rem(40);
-        height: rem(40);
-        border: 2px solid $french-gray;
-        outline: 0;
-        transition: all 0.15s;
-        cursor: pointer;
-        &:hover {
-          opacity: 0.8;
-        }
-
-        &.vcr__button--record {
-          background: $alizarin-crimson;
-          @include border-radius(100%);
-        }
-
-        &.vcr__button--stop {
-          background-color: $bright-gray;
-          @include border-radius(8px);
-        }
-
-        &.vcr__button--clear {
-          border: 0;
-          img {
-            width: rem(40);
-            height: 100%;
-          }
-        }
-
-        &.vcr__button--play {
-          background: transparent;
-          box-sizing: border-box;
-          border-width: rem(20) 0 rem(20) rem(36);
-          border-color: transparent transparent transparent $japanese-laurel;
-          &__playing {
-            border-color: transparent transparent transparent $french-gray;
-            pointer-events: none;
-          }
-        }
-      }
     }
   }
 }

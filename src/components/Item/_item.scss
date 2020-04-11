@@ -11,7 +11,7 @@
   &:hover {
     background: $emerald-20;
 
-    .item__edit, .item__remove {
+    .button__edit, .button__remove {
       opacity: 1;
     }
   }
@@ -65,11 +65,6 @@
     }
   }
 
-  @keyframes strike{
-    0%   { width : 0; }
-    100% { width: 100%; }
-  }
-
   &__checked {
     .item__text__name {
       span {
@@ -112,41 +107,6 @@
       width: rem(20);
       height: rem(20);
       padding-left: rem(6);
-    }
-  }
-
-  &__edit {
-    color: $bright-gray;
-    opacity: 0;
-    background: transparent;
-    border: none;
-    padding: 0 rem(16);
-    outline: 0;
-    transition: all 0.15s;
-    cursor: pointer;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &__remove {
-    font-size: rem(16);
-    font-family: $secondary-font;
-    color: $emerald;
-    font-weight: 700;
-    opacity: 0;
-    width: rem(28);
-    height: rem(28);
-    border: rem(2) solid $athens-gray;
-    background-color: $white;
-    transition: all 0.15s;
-    outline: 0;
-    cursor: pointer;
-    @include border-radius(100%);
-
-    &:hover {
-      background-color: $emerald;
-      color: white;
     }
   }
 }

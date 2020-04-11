@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Input from '../Input';
+import Button from '../Button';
 
 const Form = ({
   name, description, onChangeName, onChangeDescription, onCreate, onKeyPress,
 }) => (
-  <div className="input">
-    <input value={name} onChange={onChangeName} placeholder="Name" />
-    <input value={description} onChange={onChangeDescription} placeholder="Description" onKeyPress={onKeyPress} />
-    <button className="input__create-button" onClick={onCreate} type="button">
-      +
-    </button>
+  <div className="form">
+    <Input value={name} onChange={onChangeName} placeholder="Name" />
+    <Input value={description} onChange={onChangeDescription} placeholder="Description" onKeyPress={onKeyPress} />
+    <Button onClick={onCreate}>+</Button>
   </div>
 );
 

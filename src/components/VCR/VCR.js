@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import Button from '../Button';
 import DeleteIcon from '../../assets/img/delete.svg';
 
 class VCR extends PureComponent {
@@ -38,24 +39,18 @@ class VCR extends PureComponent {
         </div>
         <div className="vcr__sticky-header--actions">
           {!isRecording && !recordingAvailable && (
-            <button className="vcr__button--record" type="button" onClick={onClickCaptureRecording}>
-              Record
-            </button>
+            <Button className="button__record" onClick={onClickCaptureRecording} aria-label="Record" />
           )}
           {isRecording && (
-            <button className="vcr__button--stop" type="button" onClick={onClickStopRecording}>
-              Stop Recording
-            </button>
+            <Button className="button__stop" onClick={onClickStopRecording} aria-label="Stop Recording" />
           )}
           {recordingAvailable && (
-            <button className={`vcr__button--play ${isPlayingRecording ? 'vcr__button--play__playing' : ''}`} type="button" onClick={onClickPlayRecording}>
-              Play Recording
-            </button>
+            <Button className={`button__play ${isPlayingRecording ? 'button__play__playing' : ''}`} onClick={onClickPlayRecording} aria-label="Play Recording" />
           )}
           {recordingAvailable && !isPlayingRecording && (
-            <button className="vcr__button--clear" type="button" onClick={onClickClearRecording}>
+            <Button className="button__clear" onClick={onClickClearRecording}>
               <img src={DeleteIcon} alt="delete" />
-            </button>
+            </Button>
           )}
         </div>
       </div>

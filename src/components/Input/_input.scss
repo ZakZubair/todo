@@ -1,0 +1,16 @@
+input {
+  &.input {
+    flex: 1;
+    font-size: rem(18);
+    color: $bright-gray;
+    outline: none;
+    border: none;
+    padding-bottom: rem(16);
+    margin: rem(24) 0 0;
+    border-bottom: rem(2) solid $emerald-20;
+    background-color: transparent;
+    &::placeholder {
+      color: $french-gray;
+    }
+  }
+}

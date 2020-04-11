@@ -19,6 +19,10 @@ Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 
 Launches the test runner
 
+### `yarn build:dev`
+
+Build the app for development
+
 ### `yarn build`
 
 Build the app for production
