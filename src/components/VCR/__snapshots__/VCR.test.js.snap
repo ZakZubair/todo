@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test VCR component render play button correctly 1`] = `
+<div
+  className="vcr__sticky-header"
+>
+  <div
+    className="vcr__sticky-header--display"
+  >
+    <span
+      className="animated"
+    >
+      Captured at 
+    </span>
+  </div>
+  <div
+    className="vcr__sticky-header--actions"
+  >
+    <button
+      className="button__play "
+      onClick={[MockFunction]}
+      type="button"
+    />
+    <button
+      className="button__clear"
+      onClick={[MockFunction]}
+      type="button"
+    >
+      <img
+        alt="delete"
+        src={
+          Object {
+            "process": [Function],
+          }
+        }
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`test VCR component render playing correctly 1`] = `
+<div
+  className="vcr__sticky-header"
+>
+  <div
+    className="vcr__sticky-header--display"
+  >
+    <span
+      className=""
+    >
+      0:10
+    </span>
+  </div>
+  <div
+    className="vcr__sticky-header--actions"
+  >
+    <button
+      className="button__stop"
+      onClick={[MockFunction]}
+      type="button"
+    />
+    <button
+      className="button__play button__play__playing"
+      onClick={[MockFunction]}
+      type="button"
+    />
+  </div>
+</div>
+`;
+
+exports[`test VCR component render record button correctly 1`] = `
+<div
+  className="vcr__sticky-header"
+>
+  <div
+    className="vcr__sticky-header--display"
+  >
+    <span
+      className=""
+    >
+      Click to record
+    </span>
+  </div>
+  <div
+    className="vcr__sticky-header--actions"
+  >
+    <button
+      className="button__record"
+      onClick={[MockFunction]}
+      type="button"
+    />
+  </div>
+</div>
+`;
+
+exports[`test VCR component render stop button correctly 1`] = `
+<div
+  className="vcr__sticky-header"
+>
+  <div
+    className="vcr__sticky-header--display"
+  >
+    <span
+      className=""
+    >
+      Recording...
+    </span>
+  </div>
+  <div
+    className="vcr__sticky-header--actions"
+  >
+    <button
+      className="button__stop"
+      onClick={[MockFunction]}
+      type="button"
+    />
+  </div>
+</div>
+`;
