@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import dayjs from 'dayjs';
 import Item from '../Item';
+import { getFormattedTime } from '../../helpers';
 
 class List extends PureComponent {
   render() {
@@ -25,8 +25,8 @@ class List extends PureComponent {
           id={id}
           name={name}
           description={description}
-          date={dayjs(dateCreated).format('DD/MM/YY  h:mm a')}
-          dateUpdated={dateUpdated ? dayjs(dateUpdated).format('DD/MM/YY  h:mm a') : ''}
+          date={getFormattedTime(dateCreated)}
+          dateUpdated={dateUpdated ? getFormattedTime(dateUpdated) : ''}
           checked={checked}
           onToggle={onToggle}
           onRemove={onRemove}

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Input component render correctly input component 1`] = `
+<input
+  className="input"
+  onChange={[MockFunction]}
+  onClick={[MockFunction]}
+  onKeyPress={[MockFunction]}
+  placeholder=""
+  value="Test value"
+/>
+`;

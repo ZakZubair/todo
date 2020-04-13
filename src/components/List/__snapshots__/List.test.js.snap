@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test List component render correctly list component 1`] = `
+<div
+  className="list-container"
+>
+  <div
+    className="item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="button"
+    tabIndex="abc123"
+  >
+    <div
+      className="item__check-mark"
+    />
+    <div
+      className="item__text "
+    >
+      <p
+        className="item__text__name"
+      >
+        <span>
+          Test name
+        </span>
+      </p>
+      <p
+        className="item__text__description"
+      >
+        Test description
+      </p>
+      <p
+        className="item__text__date"
+      >
+        Created at 13/04/2020 4:28 pm
+      </p>
+    </div>
+    <button
+      className="button__edit"
+      onClick={[Function]}
+      type="button"
+    >
+      Edit
+    </button>
+    <button
+      className="button__remove"
+      onClick={[Function]}
+      type="button"
+    >
+      ×
+    </button>
+  </div>
+  <div
+    className="item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="button"
+    tabIndex="abc456"
+  >
+    <div
+      className="item__check-mark"
+    />
+    <div
+      className="item__text "
+    >
+      <p
+        className="item__text__name"
+      >
+        <span>
+          Test name 2
+        </span>
+      </p>
+      <p
+        className="item__text__description"
+      >
+        Test description 2
+      </p>
+      <p
+        className="item__text__date"
+      >
+        Updated at 13/04/2020 4:28 pm
+      </p>
+    </div>
+    <button
+      className="button__edit"
+      onClick={[Function]}
+      type="button"
+    >
+      Edit
+    </button>
+    <button
+      className="button__remove"
+      onClick={[Function]}
+      type="button"
+    >
+      ×
+    </button>
+  </div>
+</div>
+`;

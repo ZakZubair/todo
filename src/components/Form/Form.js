@@ -7,8 +7,8 @@ const Form = ({
   name, description, onChangeName, onChangeDescription, onCreate, onKeyPress,
 }) => (
   <div className="form">
-    <Input value={name} onChange={onChangeName} placeholder="Name" />
-    <Input value={description} onChange={onChangeDescription} placeholder="Description" onKeyPress={onKeyPress} />
+    <Input name="name" value={name} onChange={onChangeName} placeholder="Name" />
+    <Input name="description" value={description} onChange={onChangeDescription} placeholder="Description" onKeyPress={onKeyPress} />
     <Button onClick={onCreate}>+</Button>
   </div>
 );

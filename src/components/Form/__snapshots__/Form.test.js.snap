@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> render correctly form component 1`] = `
+<div
+  className="form"
+>
+  <input
+    className="input"
+    onChange={[MockFunction]}
+    onClick={null}
+    onKeyPress={null}
+    placeholder="Name"
+    value="Test name"
+  />
+  <input
+    className="input"
+    onChange={[MockFunction]}
+    onClick={null}
+    onKeyPress={[MockFunction]}
+    placeholder="Description"
+    value="Test description"
+  />
+  <button
+    className="button__add"
+    onClick={[MockFunction]}
+    type="button"
+  >
+    +
+  </button>
+</div>
+`;

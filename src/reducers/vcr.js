@@ -1,6 +1,5 @@
 import { REHYDRATE } from 'redux-persist/lib/constants';
-import dayjs from 'dayjs';
-import { getTimeElapsedInMinutes } from '../helpers';
+import { getTimeElapsedInMinutes, getCurrentTime } from '../helpers';
 import * as types from '../constants/actionTypes';
 
 const initialState = {
@@ -45,12 +44,11 @@ const vcr = (state = initialState, action) => {
           recording: [],
         };
       }
-      const currentTime = dayjs().format('DD/MM/YYYY HH:mm a');
 
       return {
         ...state,
         isRecording: false,
-        recordedTime: currentTime,
+        recordedTime: getCurrentTime(),
       };
     }
     case types.PLAY_RECORDING: {

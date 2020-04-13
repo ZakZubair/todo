@@ -1,3 +1,5 @@
+import dayjs from 'dayjs';
+
 /**
  * Get time in minutes
  * @param {number} sec seconds
@@ -13,3 +15,16 @@ export const getTimeElapsedInMinutes = (sec) => {
 
   return `${minutes}:${secRemainder}`;
 };
+
+/**
+ * Get current time
+ * @return {string} Current time
+ */
+export const getCurrentTime = () => dayjs().format('DD/MM/YYYY h:mm a');
+
+/**
+ * Get formatted time
+ * @param {date} dateTime seconds
+ * @return {string} Formatted time
+ */
+export const getFormattedTime = (dateTime) => dayjs(dateTime).format('DD/MM/YYYY h:mm a');
