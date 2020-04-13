@@ -9,7 +9,7 @@ const Form = ({
   <div className="form">
     <Input name="name" value={name} onChange={onChangeName} placeholder="Name" />
     <Input name="description" value={description} onChange={onChangeDescription} placeholder="Description" onKeyPress={onKeyPress} />
-    <Button onClick={onCreate}>+</Button>
+    <Button onClick={onCreate} disabled={!(name && description)}>+</Button>
   </div>
 );
 

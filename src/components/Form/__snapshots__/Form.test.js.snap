@@ -22,6 +22,7 @@ exports[`<Form /> render correctly form component 1`] = `
   />
   <button
     className="button__add"
+    disabled={false}
     onClick={[MockFunction]}
     type="button"
   >

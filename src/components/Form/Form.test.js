@@ -40,6 +40,7 @@ describe('<Form />', () => {
       onChangeDescription: mockCallBack,
       onCreate: mockCallBack,
       onKeyPress: mockCallBack,
+      disabled: false,
     };
 
     const FormComponent = renderer.create(<Form {...props} />).toJSON();

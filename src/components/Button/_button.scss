@@ -20,6 +20,12 @@
       background: $emerald;
       color: $white;
     }
+
+    &:disabled {
+      background-color: $french-gray;
+      color: $bright-gray;
+      pointer-events: none;
+    }
   }
 
   &__edit {
