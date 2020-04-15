@@ -54,13 +54,13 @@
 @include keyframes(blink-recording) {
   50% {
     border-color: $alizarin-crimson;
-    box-shadow: 0 rem(30) rem(56) rem(6) $alizarin-crimson-35;
+    box-shadow: 0 rem(30) rem(56) rem(6) $alizarin-crimson-10;
   }
 }
 
 @include keyframes(blink-playing) {
   50% {
     border-color: $japanese-laurel;
-    box-shadow: 0 rem(30) rem(56) rem(6) $japanese-laurel-35;
+    box-shadow: 0 rem(30) rem(56) rem(6) $japanese-laurel-10;
   }
 }
